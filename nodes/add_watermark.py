@@ -32,6 +32,7 @@ def add_image_watermark(original, watermark, x, y, opacity, scale):
 def add_text_watermark(original, text, x, y, scale, opacity, color, fonts):
     txt = Image.new('RGBA', original.size, (255, 255, 255, 0))
     font_path = get_font_path()
+    font_path = os.path.join(font_path, fonts)
     font_size = int(40 * scale)
     font = ImageFont.truetype(font_path, font_size)
     d = ImageDraw.Draw(txt)
